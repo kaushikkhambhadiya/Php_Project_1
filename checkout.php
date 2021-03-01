@@ -4,9 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Checkout Page - Hooked on Books</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
    
     <a class="navbar-brand" href="index.php">Hooked on Books</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,3 +100,31 @@ if (isset($_GET['name'])) {
 </div>
 </body>
 </html>
+    
+<?php
+require("mysqli_connect.php");
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $bookname = $_SESSION['name'];
+    $flag = true;
+    if (empty($_POST['firstname'])) {
+        echo "<script>
+document.getElementById('bookNameFromSession').innerHTML='Please fill up below details to order : {$bookname}';
+</script>
+<div class='row col-md-12 ml-5'>
+    <p class='text-danger'>Please enter FirstName before placing order </p>
+</div>";
+        $flag = false;
+    }
+    if (empty($_POST['lastname'])) {
+        echo "<script>
+document.getElementById('bookNameFromSession').innerHTML='Please fill up below details to order : {$bookname}';
+</script>
+<div class='row col-md-12 ml-5'>
+    <p class='text-danger'>Please enter LastName before placing order</p>
+</div>";
+        $flag = false;
+    }
+}
+
+?>
+

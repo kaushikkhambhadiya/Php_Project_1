@@ -10,7 +10,7 @@ require("mysqli_connect.php");
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
    
     <a class="navbar-brand" href="index.php">Hooked on Books</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@ require("mysqli_connect.php");
         while ($row = mysqli_fetch_array($result)) {
             echo "<tr class='text-center'>
                      <td>{$row['bookid']}</td>
-                     <td><a style='text-decoration: none;color:rgb(229,40,60)' href='checkout.php?name={$row['bookname']}'>{$row['bookname']}</a></td>
+                     <td><a style='text-decoration: none;color:rgb(30,144,255))' href='checkout.php?name={$row['bookname']}'>{$row['bookname']}</a></td>
                      <td>{$row['available_quantity']}</td>
                      <td>{$row['author_name']}</td>
                      <td>{$row['price']}</td>
