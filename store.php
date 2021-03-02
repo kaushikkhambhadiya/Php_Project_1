@@ -7,12 +7,13 @@ require("mysqli_connect.php");
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Bookstore - Hooked on Books</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
    
-    <a class="navbar-brand" href="index.php">Hooked on Books</a>
+    <a class="navbar-brand" href="index.php">Bookstore</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -58,8 +59,9 @@ require("mysqli_connect.php");
     </table>
 </div>
     <footer>
+   <footer>
 <div class="container-fluid mt-3">
-    <div class="row bg-danger">
+    <div class="row bg-primary">
         <div class="col-md-12 text-center text-light">
             <p>&copy; Copyright 2020 - All rights reserved by Kaushik Khambhadiya</p>
         </div>

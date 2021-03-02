@@ -1,0 +1,206 @@
+
+.clear {
+  clear: both;
+}
+
+p {
+  line-height: 25px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+h2.title_row{
+  text-align: center;
+}
+h2.title_row:after {
+     display: block;
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #009ee3;
+    margin: 16px auto 0;
+}
+
+.row {
+  background-color: white;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2em;
+}
+
+
+.row-image {
+    float: right;
+    margin-left: 3em;
+    width: 35%;
+}
+.row-image img {
+  width: 100%;
+  height: auto;
+}
+.row-text {
+  font-size: 1.3em;
+}
+
+
+.left{
+  width: 50%;
+      float: left;
+}
+ .right{
+  width: 50%;
+      float: right;
+ }
+ .right p, .right h2{
+  margin-left: 30px;
+ }
+
+.about_Img{
+  width:100%;
+}
+
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+table td a:hover{
+  font-style: italic;
+    color: darkorange;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  table {
+    border: 0;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+    .company_logo img {
+      max-width: 155px;
+  }
+  
+  nav ul li a {
+    padding: 1em; 
+  }
+    
+  .row {
+    padding: 1em;
+  }
+  
+  .row-image {
+    float: none;
+    margin: 0;
+    width: 100%;
+  }s
+}
+
+
+
+
+@media (max-width: 1024px) {
+  
+  .company_logo img {
+      max-width: 155px;
+  }
+
+  main {
+    padding: 0 1em;
+  }
+
+.left{
+  width: 100%;
+
+}
+ .right{
+  width: 100%;
+ }
+ 
+ .right p , .right h2{
+    margin-left: 0px;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

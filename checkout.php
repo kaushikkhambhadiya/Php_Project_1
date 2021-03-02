@@ -9,7 +9,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
    
-    <a class="navbar-brand" href="index.php">Hooked on Books</a>
+    <a class="navbar-brand" href="index.php">Bookstore</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -98,10 +98,10 @@ if (isset($_GET['name'])) {
         </form>
     </div>
 </div>
-</body>
-</html>
     
-<?php
+    
+    
+    <?php
 require("mysqli_connect.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $bookname = $_SESSION['name'];
@@ -124,7 +124,47 @@ document.getElementById('bookNameFromSession').innerHTML='Please fill up below d
 </div>";
         $flag = false;
     }
+    if (!isset($_POST['paymentoption'])) {
+        echo "<script>
+document.getElementById('bookNameFromSession').innerHTML='Please fill up below details to order : {$bookname}';
+</script>
+<div class='row col-md-12 ml-5'>
+    <p class='text-danger'>Please select a payment option.</p>
+</div>";
+        $flag = false;
+    }
+    if ($flag == true) {
+        $firstname = mysqli_real_escape_string($dbc, $_POST['firstname']);
+        $lastname = mysqli_real_escape_string($dbc, $_POST['lastname']);
+        $paymentoption = mysqli_real_escape_string($dbc, $_POST['paymentoption']);
+        echo "<script>
+document.getElementById('bookNameFromSession').innerHTML='Please fill up below details to order : {$bookname}';
+document.getElementById('checkOutForm').reset();
+</script>
+<div class='row col-md-12 ml-5'>
+    <p class='text-success'>Congratulations ! Your Order for {$bookname} is placed Successfully !!!</p>
+</div>";
+        $insertQuery = "INSERT INTO insertbookinventory (firstname,lastname,paymentoption,bookname) VALUES ('$firstname','$lastname','$paymentoption','$bookname')";
+        mysqli_query($dbc, $insertQuery);
+        $reduceQuantity = "UPDATE bookinventory SET available_quantity=available_quantity-1 WHERE bookname='$bookname'";
+        mysqli_query($dbc, $reduceQuantity);
+          
+    }
+    mysqli_close($dbc);
 }
 
 ?>
+    
+<footer>
+<div class="container-fluid mt-3">
+    <div class="row bg-primary">
+        <div class="col-md-12 text-center text-light">
+            <p>&copy; Copyright 2020 - All rights reserved by Kaushik Khambhadiya</p>
+        </div>
+    </div>
+</div>
+</footer>
 
+</body>
+</html>
+    
